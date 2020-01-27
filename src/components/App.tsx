@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { add, remove } from '../modules/app'
+import { appModule } from '../modules/app'
 import { StoreState } from "../store";
 
 const App: React.FC = () => {
@@ -13,8 +13,8 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <p>{count}</p>
-      <button onClick={() => dispatch(add())}>add</button>
-      <button onClick={() => dispatch(remove())}>remove</button>
+      <button onClick={() => dispatch(appModule.actions.add())}>add</button>
+      <button onClick={() => dispatch(appModule.actions.remove())}>remove</button>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { Reducer } from "redux";
+import { createSlice } from "@reduxjs/toolkit";
 
 type State = {
   count: number
@@ -7,6 +8,21 @@ type State = {
 const initialState: State = {
   count: 0
 }
+
+export const appModule = createSlice({
+  name: 'app',
+  initialState: {
+    count: 0
+  },
+  reducers: {
+    add: (state) => {
+      state.count = state.count + 1
+    },
+    remove: (state) => {
+      state.count = state.count - 1
+    }
+  }
+})
 
 export const add = () => {
   return {

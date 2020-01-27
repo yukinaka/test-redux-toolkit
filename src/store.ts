@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
-import { appReducer as app } from "./modules/app";
+import { appReducer as app, appModule } from "./modules/app";
 // import thunk from 'redux-thunk'
 // import { createBrowserHistory } from 'history'
 
@@ -7,7 +7,8 @@ import { appReducer as app } from "./modules/app";
 
 const reducer = combineReducers({
   // router: connectRouter(history),
-  app
+  // app,
+  app: appModule.reducer
 })
 
 export type StoreState = ReturnType<typeof reducer>
